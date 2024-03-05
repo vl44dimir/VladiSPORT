@@ -1,0 +1,695 @@
+@font-face {
+    font-family: 'geomanist';
+    src: url('../assets/font/geomanist/geomanist-regular-webfont.eot');
+    src : url('../assets/font/geomanist/geomanist-regular-webfont.eot?#iefix') format('embedded-opentype'),
+          url('../assets/font/geomanist/geomanist-regular-webfont.woff2') format('woff2'),
+          url('../assets/font/geomanist/geomanist-regular-webfont.woff') format('woff'),
+          url('../assets/font/geomanist/geomanist-regular-webfont.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        }
+* {
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 0px;
+    box-sizing: border-box;
+    font-size: 100%;
+    vertical-align: baseline;
+    -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+}
+body {
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-feature-settings: "calt" 0;    
+}
+img {
+    height: 230px;
+    width: 160px;
+}
+button, input[type=button] {
+    background: 0 0;
+    border: 0;
+    outline: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+.homeBar {
+    overflow: hidden;
+    width: 100vw;
+    height: 5vh;}
+.homeBar .burger-menu {
+    z-index: 52;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    height: 5vh;}
+.homeBar .profil {
+    z-index: 53;
+    top: 0;
+    position: absolute;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    right: 2rem;}
+.homeBar .profil a {
+    text-decoration: none;}
+.homeBar .profil span {
+    cursor: pointer;
+    color: black;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color .3s;}
+.homeBar .profil span:hover {
+    color: #e3474b;}
+.homeBar .login {
+    z-index: 53;
+    top: 0;
+    position: absolute;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    right: 2rem;}
+.homeBar .login span {
+    cursor: pointer;
+    color: black;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color .3s;}
+.homeBar .login span:hover {
+    color: #e3474b;}
+.homeBar .burger-menu > .bars {
+    --bar-width: 25px;
+    width: var(--bar-width);
+	height: calc(var(--bar-width) / 1.11);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;}
+.homeBar .burger-menu > .bars > .line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 100px;
+    transition: 0.5s;
+    background: #e3474b;}
+.homeBar.burger-menu > .bars.-active .line {
+    margin: 0;}
+.homeBar .burger-menu > .bars.-active .line:first-child {
+    transform-origin: left;
+    transform: rotate(-45deg) translate(calc(var(--bar-width) / -3), calc(var(--bar-width) / 2.3));}
+.homeBar .burger-menu > .bars.-active .line:nth-child(2) {
+    transform-origin: right;
+	 transform: rotate(45deg) translate(calc(var(--bar-width) / 18), calc(var(--bar-width) / 2.7));}
+.homeBar .burger-menu > .bars.-active .line:nth-child(3) {
+    opacity: 0;}
+
+
+.selectChoice {
+    position: relative;}
+/* Anime1 */
+.selectChoice .card1 {
+    position: absolute;
+    margin-left: -170px;
+    margin-top: 10px;
+    transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
+    transition: .8s;
+    z-index: 2
+}.selectChoice .card1:hover {
+        transform: rotateX(15deg) rotateY(0deg) rotateZ(-10deg);}
+/* Anime2 */
+.selectChoice .card2 {
+    position: absolute;
+    margin-left: -50px;
+    margin-top: -50px;
+    transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
+    transition: .8s;
+    z-index: 2
+}.selectChoice .card2:hover {
+        transform: rotateX(15deg) rotateY(0deg) rotateZ(-10deg);}
+
+.banner {
+    overflow: hidden;
+}
+.banner img {
+    width: 100vw;
+    height: inherit;
+    filter: blur(160px);
+}
+.navBar {
+    left: -500px;
+    z-index: 50;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 5vh;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    background: black;
+    transition: left .4s;
+}
+.navBar.-active {
+    left: 0;
+}
+.navBar form {
+    position: relative;
+    margin-bottom: 2rem;}
+.navBar form input {
+    width: 100%;
+    padding: 0 20px;
+    background-color: #373636;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color .3s,border-color .3s;
+    font-weight: 400;
+    font-size: 14px;
+    height: 46px;
+    border:none;
+}
+.navBar form button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 15px;
+    background: none;
+    border: none;
+}
+.navBar form button svg {
+    width: 16px;
+    height: 16px;
+}
+.navBar .navList {
+    list-style: none;
+}
+.navBar .navList .item {
+    position: relative;
+    border-bottom: 1px solid #373636;
+}
+.navBar .navList .item a {
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 0;
+    line-height: 1;
+    font-weight: bold;
+    transition: color .3s;
+}
+.navBar .navList .item a:hover {
+    color: #e3474b
+}
+.navBar .navList .dropDown button {
+    width: 35px;
+    height: 35px;
+}
+.navBar .navList .dropDown button:before {
+    top: 16px;
+    right: 7px;
+    width: 10px;
+    height: 2px;
+}
+.navBar .navList .dropDown button:after {
+    top: 12px;
+    right: 11px;
+    width: 2px;
+    height: 10px;
+}
+.navBar .navList .dropDown:after, .navBar .navList .dropDown button:before {
+    content: '';
+    background-color: #6f6f6f;
+    position: absolute;
+    transition: background-color .3s, opacity .3s;
+}
+button.dropDownButton {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+.navBar .navList .dropDown .dropDownList:last-child {
+    padding-bottom: 20px;
+}
+.navBar .navList .dropDown .dropDownList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: .1em;
+    padding-top: 7px;
+    padding-left: 10px;
+    transition: opacity .6s;
+}
+.navBar .navList .dropDown .dropDownList li {
+    margin-bottom: 6px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.navBar .navSocial {
+    letter-spacing: normal;
+    font-size: 0;
+    list-style: none;
+    margin: 30px 0;
+}
+.navBar .navSocial .social {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    font-size: 1rem;
+    width: auto;
+    margin-right: 25px;
+}
+.navBar .navSocial .social svg {
+    fill: #fff;
+    transition: fill .3s;
+    width: 14px;
+    height: 14px;
+}
+.navBar .navSocial .social svg:hover {
+    fill: #e3474b;
+}
+.hprecommend {
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.hprecommend .commendList {
+    list-style: none;
+    font-size: 12px;
+}
+.hprecommend .commendList .item {
+    padding-top: 5px;
+    color: none;
+}
+.hprecommend .commendList .item a {
+    text-decoration: none;
+    color: #fff;
+    transition: color .3s;
+}
+.hprecommend .commendList .item a:hover {
+    color: #e3474b;
+}
+.navLogin {
+    right: -500px;
+    z-index: 1;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 5vh;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    background: black;
+    transition: right .4s;
+}
+.navLogin.-active {
+    right: 0;
+}
+.navLogin .navUserLogin {
+    padding-top: 60px;
+}
+.navLogin .navUserLogin .inputGroup {
+    margin-bottom: 23px;
+}
+.navLogin .navUserLogin .inputGroup .label {
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    font-size: 18px;
+    margin-bottom: 7px;
+    line-height: 1;
+    color: #fff;
+}
+.navLogin .navUserLogin .inputGroup .input {
+    font-family: Geomanist,sans-serif;
+    text-transform: none;
+    padding: 0 20px;
+    background-color: #373636;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color .3s, border-color .3s;
+    font-weight: 400;
+    font-size: 14px;
+    height: 46px;
+    border: none;
+    width: 260px;
+}
+.navLogin .navUserLogin .inputGroup .input:focus {
+    background-color: #444343;
+    outline: none;
+}
+.navLogin .navUserLogin .button {
+    font-family: Geomanist,sans-serif;
+    position: relative;
+    display: block;
+    background-color: #e3474b;
+    transition: background-color .3s,color .3s;
+    border-radius: 4px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    line-height: 1;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.navLogin .navUserLogin .forgotPassword {
+    color: #6a6969;
+    font-size: 13px;
+    text-transform: none;
+    font-family: Asap,sans-serif;
+    font-weight: 400;
+}
+
+
+
+
+
+
+.siteTitle {
+    position: absolute;
+    right: 0;
+    padding: 10rem 15rem 0 0;}
+.siteTitle h1 {
+    color: black;
+    font-size: 2.5rem;
+    font-weight: 800;}
+.siteTitle p {
+    color: #777e90;
+    line-height: 1.75rem;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+.results-list {
+    position: absolute;
+    right: 10px;
+    top: 80px;}
+
+.program {
+    padding: 2rem;
+    background: #e8e8e8;
+}
+.program .card {
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.04);
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+.program .exoTitle {
+    display: flex;
+    align-items: center;;
+}
+.program .exoTitle .exoPics {
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+}
+.program .exoTitle div {
+    padding: 0 10px;
+    line-height: 1;
+}
+.program .exoTitle div span {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.program .exoTitle div p {
+    font-size: 12px;
+    color: #d3d3d3;
+}
+.program .exoTitle div p span {
+    color: black;
+    font-weight: 600;
+    font-size: 12px;
+}
+.program .exoDesc {
+    color: #e3474b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    padding-top: 5px;
+}
+.program .exoDesc svg {
+    stroke: #e3474b;
+    width: 14px;
+    height: 14px;
+}
+.program .exoInfo {
+    padding: 5px 0;
+    font-size: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d3d3d3;
+}
+.program .exoInfo span {
+    flex: 1 1;
+}
+.program .exo {
+    padding: 5px 0;
+    font-size: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d3d3d3;
+}
+.program .exo span, .program .exo input {
+    flex: 1 1;
+}
+/* CHECKBOX */
+.check {
+    margin: auto;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer; }
+    .check span {
+      display: inline-block;
+      vertical-align: middle;
+      transform: translate3d(0, 0, 0); }
+      .check span:first-child {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        border-radius: 3px;
+        transform: scale(1);
+        vertical-align: middle;
+        border: 1px solid #d3d3d3;
+        transition: all .2s ease; }
+        .check span:first-child svg {
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          fill: none;
+          stroke: #FFFFFF;
+          stroke-width: 2;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-dasharray: 16px;
+          stroke-dashoffset: 16px;
+          transition: all .3s ease;
+          transition-delay: .1s;
+          transform: translate3d(0, 0, 0); }
+        .check span:first-child:before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          background: #e3474b;
+          display: block;
+          transform: scale(0);
+          opacity: 1;
+          border-radius: 50%; }
+      .check span:last-child {
+        padding-left: 8px; }
+    .check:hover span:first-child {
+      border-color: #e3474b; }
+  
+  .checkBox:checked + .check span:first-child {
+    background: #e3474b;
+    border-color: #e3474b;
+    animation: wave .4s ease; }
+    .checkBox:checked + .check span:first-child svg {
+      stroke-dashoffset: 0; }
+    .checkBox:checked + .check span:first-child:before {
+      transform: scale(3.5);
+      opacity: 0;
+      transition: all .6s ease; }
+  
+  @keyframes wave {
+    50% {
+      transform: scale(0.9); } }
+/* FIN */
+.program .button {
+    font-family: Geomanist,sans-serif;
+    position: relative;
+    display: block;
+    background-color: #e3474b;
+    transition: background-color .3s,color .3s;
+    border-radius: 4px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    line-height: 1;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.accountSetting {
+    padding: 2rem 2rem 0rem 2rem;
+    display: flex;
+    flex-direction: column;
+    background: #f7f7f8;}
+.accountSetting .title {
+    text-transform: uppercase;
+    color: #6f6f6f;
+    font-size: 15px;
+    font-weight: 600;}
+.accountSetting .accountPicture {
+    width: calc(100vw - 4rem);
+    height: 150px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+.accountSetting .accountPicture .baniere {
+    width: 100%;
+    height: 150px;
+    border-radius: 6px 6px 0 0;
+    position: absolute;}
+.accountSetting .accountPicture .profil {
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    width: 90px;
+    height: 90px;}
+.accountSetting .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background: #fff;}
+.accountSetting .close {
+    border-radius: 0 0 6px 6px;}
+.accountSetting .container svg {
+    stroke: black;}
+.accountSetting .container .part h3 {
+    font-size: 14px;}
+.accountSetting .container .part p {
+    font-size: 13px;}
+.accountSetting .subTitle {
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    color: #6f6f6f;}
+
+.accountProfils {
+    padding: 2rem 2rem 0rem 2rem;
+    display: flex;
+    flex-direction: column;
+    background: #f7f7f8;}
+.accountProfils .title {
+    text-transform: uppercase;
+    color: #6f6f6f;
+    font-size: 15px;
+    font-weight: 600;}
+.accountProfils .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background: #fff;}
+.accountProfils .close {
+    border-radius: 0 0 6px 6px;}
+.accountProfils .debut {
+    border-radius: 6px 6px 0 0;}
+.accountProfils .container svg {
+    stroke: #6f6f6f;}
+.accountProfils .container .part h3 {
+    font-weight: 500;
+    font-size: 14px;}
+.accountProfils .container .part p {
+    font-size: 13px;
+    color: #6f6f6f;}
+
+.accountPrograms {
+    padding: 2rem 2rem 7rem 2rem;
+    display: flex;
+    flex-direction: column;
+    background: #f7f7f8;}
+.accountPrograms .title {
+    text-transform: uppercase;
+    color: #6f6f6f;
+    font-size: 15px;
+    font-weight: 600;}
+.accountPrograms .container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    border-radius: 6px;}
+.accountPrograms .container .part h3 {
+    font-weight: 500;
+    font-size: 14px;}
+.accountPrograms .subTitle {
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    color: #6f6f6f;}
+.accountPrograms .partDown ul {
+    padding-left: 10px;}
+.accountPrograms .partDown li {
+    margin-bottom: 6px;
+    list-style: none;
+    color: #6f6f6f;}
+.accountPrograms .partDown li a {
+    text-decoration: none;
+    color: #6f6f6f;}
+.accountPrograms .partDown.-active{
+    display: inherit !important;
+    margin-top: 0.5rem;}
+
+.accountLogout {
+    padding: 2rem 2rem 0rem 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #f7f7f8;}
+.accountLogout h3 {
+    font-weight: 500;
+    font-size: 14px;}
+.accountLogout span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    margin-top: 0.8rem;
+    background: #fff;
+    border-radius: 6px;
+    width: 100%;}
+.accountLogout span a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #e3474b;}
+
+.vide {
+    background: #f7f7f8;
+    height: 5vh;
+}
