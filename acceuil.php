@@ -16,6 +16,30 @@ $google_oauth = new Google_Service_Oauth2($client);
 $user_info = $google_oauth->userinfo->get();
 ?>
 
+<?php 
+  $email = $user_info["email"];
+  $sql = "SELECT `type` FROM `users` WHERE `email`=?";
+  $stmt = $db_connection->prepare($sql);
+  $stmt->bind_param('s', $email);
+  $stmt->execute();
+
+  $result = $stmt->get_result();
+
+  if ($row = $result->fetch_assoc()) {
+    $typeUser = $row['type']; // Accéder à la valeur de type
+    if ($row['type'] === 'premium'){
+      header('Location: /premium/');
+      exit;
+    } elseif ($row['type'] === 'basic'){
+      header('Location: /basic/');
+      exit;
+    }
+    var_dump($typeUser);
+  } else {
+      echo "Aucun utilisateur";
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 
